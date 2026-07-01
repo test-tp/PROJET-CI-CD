@@ -1,0 +1,23 @@
+name: 01 - CI Build & Test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build local image for testing
+        run: |
+          docker build -t my-app:test .
+
+      - name: Test local image (HTTP Verification)
+        run: |
+          docker run -d -p 8080:80 --name test-container my-app:test
+          sleep 3
+          curl --fail http://localhost:8080 || exit 1
+          docker rm -f test-container

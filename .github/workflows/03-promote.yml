@@ -1,0 +1,29 @@
+name: 03 - Manual Promotion
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: 'Tag SHA de l''image à promouvoir (ex: sha-abcdef...)'
+        required: true
+
+jobs:
+  deploy-recette:
+    name: Simulation Recette
+    runs-on: ubuntu-latest
+    environment: recette
+    steps:
+      - name: Deploying Artifact to Recette
+        run: |
+          echo "Déploiement de l'image : ghcr.io/${{ github.repository }}/nginx-web:${{ github.event.inputs.image_tag }}"
+
+  deploy-prod:
+    name: Promotion Production Simulée
+    runs-on: ubuntu-latest
+    needs: deploy-recette
+    environment: production-simulee
+    steps:
+      - name: Deploying Same Artifact to Prod (No Rebuild)
+        run: |
+          echo "PROMOTION SANS REBUILD effectuée avec succès."
+          echo "Artéfact immuable déployé : ghcr.io/${{ github.repository }}/nginx-web:${{ github.event.inputs.image_tag }}"

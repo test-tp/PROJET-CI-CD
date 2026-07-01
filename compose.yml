@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    deploy:
+      replicas: 1
+
+  ping-service:
+    image: curlimages/curl:8.1.2
+    command: ["sh", "-c", "while true; do curl -s http://web && sleep 5; done"]
+    depends_on:
+      - web
