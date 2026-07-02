@@ -3,7 +3,7 @@
 ## Test automatisé GitHub Actions
 
 - Workflow concerné : 01-ci.yml
-- Lien vers le run réussi : A compléter
+- Lien vers le run réussi : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28616320597
 - Ce qui est testé : Le workflow construit l'image Docker à partir du Dockerfile pour valider l'absence d'erreurs de build. Il démarre ensuite le conteneur sur le runner Ubuntu et utilise une commande curl pour effectuer un test de connectivité HTTP (Healthcheck). Cela vérifie que le serveur Nginx répond correctement avec un code d'état 200.
 - Résultat : Le test est validé avec succès (statut au vert). Le site web est fonctionnel et accessible, ce qui autorise le déclenchement du workflow suivant pour la publication.
 
