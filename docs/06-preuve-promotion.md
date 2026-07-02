@@ -14,6 +14,5 @@ La promotion doit réutiliser une image existante. Elle ne doit pas reconstruire
 
 ## Preuve
 
-Indiquer ici l'élément qui prouve que la promotion s'est faite sans rebuild.
 <img width="1872" height="527" alt="image" src="https://github.com/user-attachments/assets/71b78726-cc60-449c-b68c-7da0866aaca2" />
 
