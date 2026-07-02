@@ -13,19 +13,17 @@ flowchart LR
 
 ## Explication
 
-Commit GitHub : C'est le déclencheur de tout le système. Dès que l'on envoie une modification de code sur notre dépôt, l'action est détectée et lance automatiquement la suite de la chaîne.
+Commit GitHub : Déclencheur automatique de toute la chaîne CI/CD dès qu'une modification est poussée sur le dépôt.
 
-Workflow 01-ci.yml (Build et Test) : C'est l'étape d'Intégration Continue. Ce script construit l'image Docker sur un serveur temporaire pour vérifier que l'application compile sans erreur. Il démarre ensuite le conteneur et effectue un test automatisé (via la commande curl) pour s'assurer que le site web répond correctement.
+01-ci.yml (Build & Test) : Construction de l'image Docker et validation de son bon fonctionnement via un test HTTP (curl) automatisé.
 
-Workflow 02-publish-ghcr.yml (Publication GHCR) : C'est l'étape de Livraison Continue. Si et seulement si les tests précédents ont réussi, ce workflow prend le relais pour publier officiellement l'image Docker sur le registre en ligne de GitHub (GitHub Container Registry).
+02-publish-ghcr.yml (Publication) : Envoi sécurisé de l'image validée vers le registre de conteneurs GitHub (GHCR).
 
-Image taguée et digest : Cette étape crée ce qu'on appelle un "artéfact immuable". L'image publiée est figée dans le temps et marquée de manière unique avec un Tag SHA (lié à votre commit) et un Digest SHA256 (l'empreinte numérique exacte du conteneur), garantissant que personne ne pourra la modifier en cours de route.
+Artéfact immuable (Tag/Digest) : Figeage définitif de l'image sous une empreinte unique pour garantir son intégrité et sa traçabilité.
 
-Workflow 03-promote.yml (Validation recette)
-C'est le début du Déploiement Continu. Ce workflow s'active manuellement par un opérateur humain. Il récupère l'image immuable stockée sur le registre pour simuler son installation et sa validation au sein de l'environnement de Recette.
+03-promote.yml (Recette) : Déclenchement manuel par un opérateur pour tester et valider l'image figée en environnement de Recette.
 
-Promotion production-simulee sans rebuild
-C'est l'aboutissement du pipeline. Une fois validée en recette, la même image est basculée vers l'environnement de Production simulée. Le point essentiel est qu'il n'y a aucun "rebuild" (aucune re-compilation) : on déploie exactement l'artéfact qui a été testé, éliminant ainsi tout risque de bug surprise.
+Promotion Production (Sans rebuild) : Bascule de cette même image testée vers la Production simulée, éliminant tout risque de bug lié à une re-compilation.
 
 ## Orchestration légère
 
