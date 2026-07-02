@@ -13,17 +13,13 @@ flowchart LR
 
 ## Explication
 
-Commit GitHub
-C'est le déclencheur de tout le système. Dès que vous envoyez une modification de code sur votre dépôt GitHub, l'action est détectée et lance automatiquement la suite de la chaîne.
+Commit GitHub : C'est le déclencheur de tout le système. Dès que l'on envoie une modification de code sur notre dépôt, l'action est détectée et lance automatiquement la suite de la chaîne.
 
-Workflow 01-ci.yml (Build et Test)
-C'est l'étape d'Intégration Continue. Ce script construit l'image Docker sur un serveur temporaire pour vérifier que l'application compile sans erreur. Il démarre ensuite le conteneur et effectue un test automatisé (via la commande curl) pour s'assurer que le site web répond correctement.
+Workflow 01-ci.yml (Build et Test) : C'est l'étape d'Intégration Continue. Ce script construit l'image Docker sur un serveur temporaire pour vérifier que l'application compile sans erreur. Il démarre ensuite le conteneur et effectue un test automatisé (via la commande curl) pour s'assurer que le site web répond correctement.
 
-Workflow 02-publish-ghcr.yml (Publication GHCR)
-C'est l'étape de Livraison Continue. Si et seulement si les tests précédents ont réussi, ce workflow prend le relais pour publier officiellement l'image Docker sur le registre en ligne de GitHub (GitHub Container Registry).
+Workflow 02-publish-ghcr.yml (Publication GHCR) : C'est l'étape de Livraison Continue. Si et seulement si les tests précédents ont réussi, ce workflow prend le relais pour publier officiellement l'image Docker sur le registre en ligne de GitHub (GitHub Container Registry).
 
-Image taguée et digest
-Cette étape crée ce qu'on appelle un artéfact immuable. L'image publiée est figée dans le temps et marquée de manière unique avec un Tag SHA (lié à votre commit) et un Digest SHA256 (l'empreinte numérique exacte du conteneur), garantissant que personne ne pourra la modifier en cours de route.
+Image taguée et digest : Cette étape crée ce qu'on appelle un "artéfact immuable". L'image publiée est figée dans le temps et marquée de manière unique avec un Tag SHA (lié à votre commit) et un Digest SHA256 (l'empreinte numérique exacte du conteneur), garantissant que personne ne pourra la modifier en cours de route.
 
 Workflow 03-promote.yml (Validation recette)
 C'est le début du Déploiement Continu. Ce workflow s'active manuellement par un opérateur humain. Il récupère l'image immuable stockée sur le registre pour simuler son installation et sa validation au sein de l'environnement de Recette.
