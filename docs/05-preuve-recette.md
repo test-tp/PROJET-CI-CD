@@ -5,8 +5,8 @@
 - Workflow concerné : 03-promote.yml
 - Environnement GitHub : recette
 - Tag source validé : latest
-- Digest observé : sha-343276ac5e256f3f6d9444f736e4af462276ec33
-- Lien du run : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28607043278
+- Digest observé : sha256:24fb6d3444aa06364814d8dd568c49210afb276596bcd8b7b2fc5d36e370cb01
+- Lien du run : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28616416578
 
 ## Résultat
 
