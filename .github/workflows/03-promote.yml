@@ -2,10 +2,6 @@ name: 03 - Manual Promotion
 
 on:
   workflow_dispatch:
-    inputs:
-      image_tag:
-        description: 'Tag SHA de l''image à promouvoir (ex: sha-abcdef...)'
-        required: true
 
 jobs:
   deploy-recette:
