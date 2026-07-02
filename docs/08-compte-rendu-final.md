@@ -1,4 +1,4 @@
-# 📝 Compte Rendu Final Personnel
+# Compte Rendu Final Personnel
 
 ## 1. Synthèse 
 Ce projet nous a permis de mettre en pratique le déploiement d'une application web statique au sein d'une chaîne CI/CD automatisée. Nous avons réalisé l'initialisation de l'environnement local sous Windows 11 avec Docker Desktop en configurant un `Dockerfile` pour empaqueter l'application Nginx, ainsi qu'un fichier `compose.yml` intégrant un service secondaire (`ping-service`) pour gérer et documenter une simulation d'orchestration et de mise à l'échelle (scaling).
