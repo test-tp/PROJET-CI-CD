@@ -2,7 +2,7 @@
 
 ## Image publiée
 
-- Nom de l'image : ghcr.io/A_COMPLETER/A_COMPLETER
+- Nom de l'image : ghcr.io/test-tp/PROJET-CI-CD
 - Tag principal : A compléter
 - Digest : A compléter
 - Lien GHCR ou capture : A compléter
