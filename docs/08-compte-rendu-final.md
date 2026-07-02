@@ -73,13 +73,16 @@ Sauvegarde/restauration : Sauvegardes automatisées, externalisées et réguliè
 
 ## 7. Preuves
 
-Lister les liens vers les runs GitHub Actions, GHCR, tags, digest et captures utiles.
-
 Lien run CI : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28616320597
+
 Lien run Publish : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28616347825
+
 Lien run Promotion : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28616416578
+
 Package GHCR : https://github.com/test-tp/PROJET-CI-CD/pkgs/container/projet-ci-cd%2Fnginx-web
+
 Tags observé : sha-95b1bc5e4d50953650d6f1975afc0a4d976040f8 (latest)
+
 Digest observé : sha256:24fb6d3444aa06364814d8dd568c49210afb276596bcd8b7b2fc5d36e370cb01
 
 <img width="1297" height="227" alt="image" src="https://github.com/user-attachments/assets/78c7b3de-b6c1-4457-8879-b63ed1a11577" />
