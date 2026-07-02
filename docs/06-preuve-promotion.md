@@ -6,7 +6,7 @@
 - Environnement GitHub : production-simulee
 - Tag source : latest
 - Tag cible : production-simulee
-- Lien du run : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28611835291
+- Lien du run : https://github.com/test-tp/PROJET-CI-CD/actions/runs/28616416578
 
 ## Point essentiel
 
