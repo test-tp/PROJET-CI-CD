@@ -16,8 +16,9 @@ Validation recette (03-promote.yml - Manuel Promotion) : L'opérateur déclenche
 
 Promotion production-simulee (03-promote.yml) : Une fois validée, la même image exacte (artéfact immuable) change simplement de statut (tag) pour être déployée dans l'environnement de production simulée.
 
-Capture de la validation : 
-****************
+Capture de la validation manuelle (blocage du pipeline avant la production exigeant la validation humaine (clic d'approbation) d'un administrateur) : 
+<img width="1501" height="770" alt="Capture d&#39;écran 2026-07-02 204136" src="https://github.com/user-attachments/assets/8520c24a-88c8-4491-a460-9428a1d61ac3" />
+
 
 Capture après la validation : 
 <img width="1395" height="540" alt="image" src="https://github.com/user-attachments/assets/47c4fe23-13a8-485f-9381-a31756953d3a" />
